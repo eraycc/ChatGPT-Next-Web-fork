@@ -1,4 +1,5 @@
 <div align="center">
+  
 <img src="./docs/images/head-cover.png" alt="icon"/>
 
 <h1 align="center">ChatGPT Next Web LangChain</h1>
