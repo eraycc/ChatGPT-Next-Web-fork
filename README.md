@@ -1,6 +1,5 @@
 <div align="center">
 <img src="./docs/images/head-cover.png" alt="icon"/>
-
 <h1 align="center">ChatGPT Next Web LangChain</h1>
 
 一键免费部署你的跨平台私人 ChatGPT 应用, 支持 GPT3, GPT4 & Gemini Pro 模型。（基于 LangChain 实现插件功能）
