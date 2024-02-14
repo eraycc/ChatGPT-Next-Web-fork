@@ -79,7 +79,9 @@
     
   - 网络请求
     - [WebBrowser](https://api.js.langchain.com/classes/langchain_tools_webbrowser.WebBrowser.html)
+      - 需要使用 `text-embedding-ada-002` 嵌入模型
     - PDFBrowser
+      - 需要使用 `text-embedding-ada-002` 嵌入模型
       - ⚠ 仅在非 vercel 环境部署时可用 ⚠
   
   - 其它
@@ -198,9 +200,9 @@ OpenAI 接口代理 URL，如果你手动配置了 openai 接口代理，请填�
 
 如果你不想让用户使用 GPT-4，将此环境变量设置为 1 即可。
 
-### `HIDE_BALANCE_QUERY` （可选）
+### `ENABLE_BALANCE_QUERY` （可选）
 
-如果你不想让用户查询余额，将此环境变量设置为 1 即可。
+如果你想启用余额查询功能，将此环境变量设置为 1 即可。
 
 ### `GOOGLE_API_KEY` （可选）
 
