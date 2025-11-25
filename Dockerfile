@@ -22,12 +22,16 @@ ENV OPENAI_API_KEY=""
 ENV GOOGLE_API_KEY=""
 ENV CODE=""
 ENV NEXT_PUBLIC_ENABLE_NODEJS_PLUGIN=1
+# Disable webpack cache to avoid ENOSPC errors in CI
+ENV NEXT_WEBPACK_USEPOLLING=false
+ENV NEXT_PRIVATE_STANDALONE_BUILD=true
 
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-RUN yarn build
+# Increase Node.js memory limit and disable webpack cache for Docker builds
+RUN NODE_OPTIONS="--max-old-space-size=4096" yarn build
 
 FROM base AS runner
 WORKDIR /app
