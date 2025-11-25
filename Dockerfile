@@ -8,7 +8,10 @@ WORKDIR /app
 
 COPY package.json yarn.lock ./
 
-RUN yarn config set registry 'https://registry.npmmirror.com/'
+# Use build arg to allow registry customization
+# Default to official registry, can override with --build-arg YARN_REGISTRY=https://registry.npmmirror.com/
+ARG YARN_REGISTRY=https://registry.yarnpkg.com
+RUN yarn config set registry "${YARN_REGISTRY}"
 RUN yarn install
 
 FROM base AS builder
